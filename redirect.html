@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Menghubungkan... — Santri Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+    <script>
+        function doRedirect() {
+            setTimeout(function() {
+                const isLocal = window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1' || 
+                                window.location.protocol === 'file:';
+                if (isLocal) {
+                    window.location.href = "status.html";
+                } else {
+                    window.location.href = "$(link-redirect)";
+                }
+            }, 2000);
+        }
+    </script>
+</head>
+<body onload="doRedirect()">
+
+<div class="app-container">
+    <div class="center-layout">
+        <div class="center-card">
+            <!-- Connecting Icon -->
+            <div class="status-icon" style="background-color: var(--soft-sage); margin: 0 auto 16px;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 24px; height: 24px; color: var(--forest-green);">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+                </svg>
+            </div>
+
+            <h2 class="portal-title" style="margin-bottom: 4px;">Menghubungkan...</h2>
+            <p class="portal-subtitle" style="margin-bottom: 8px;">Menyiapkan koneksi internet Santri Connect untuk Anda</p>
+
+            <!-- Loading Dots -->
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <p style="font-size: 11px; color: var(--muted-text); font-weight: 500;">
+                Jika tidak dialihkan otomatis, <a href="status.html" style="color: var(--forest-green); text-decoration: underline; font-weight: 700;">klik di sini</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
